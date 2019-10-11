@@ -1,1 +1,167 @@
-Test
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-pink.min.css" />
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="icon" href="assets/icon.png" type="image/gif" sizes="40x40"> -->
+
+  <!-- <link rel="icon" href="sk.png" type="image/gif" sizes="20x20"> -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAC2hgUN6GjrmzLEnkCT_515hUATy85cjw",
+    authDomain: "bar-kassa.firebaseapp.com",
+    databaseURL: "https://bar-kassa.firebaseio.com",
+    projectId: "bar-kassa",
+    storageBucket: "bar-kassa.appspot.com",
+    messagingSenderId: "58555822847"
+  };
+  firebase.initializeApp(config);
+</script>
+
+  <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'>
+  </script>
+<title>
+  Bar Kassa
+  </title>
+</head>
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+            ">
+            <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style='width: 100%;' id='load'></div>
+
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <div class="mdl-layout-spacer">
+<span class='mdl-layout-title'><img src='assets/camel.png' style='width: 50px'>&nbsp Camelbar Rekening <span id='usertitle'></span></span>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+        <!-- <label class="mdl-button mdl-js-button mdl-button--icon"
+               for="fixed-header-drawer-exp">
+          <i class="material-icons">search</i>
+        </label> -->
+         <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="sample"
+                 id="fixed-header-drawer-exp">
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Rekeningen</span>
+    <nav class="mdl-navigation">
+
+    </nav>
+
+  </div>
+
+  <main class="mdl-layout__content">
+<div id='kassa'>
+  <!-- <div id='head'>
+  <div style='display: table-cell; vertical-align: middle; color: black; '>Kassa</div>
+  </div> -->
+  <div id='products'>
+    <!-- <center> -->
+    <div class="mdl-cell mdl-cell--2-col product" id='Fris'><div class='productName'>Fris</div></div>
+    <div class="mdl-cell mdl-cell--2-col product" id='Bier'><div class='productName'>Bier</div></div>
+    <div class="mdl-cell mdl-cell--2-col product" id='Wijn'><div class='productName'>Wijn</div></div>
+    <div class="mdl-cell mdl-cell--2-col product" id='Speciaal'><div class='productName'>Speciaal bier</div></div>
+    <div class="mdl-cell mdl-cell--2-col product" id='Shots'><div class='productName'>Shots</div></div>
+    <hr style='width: 50%; margin-left:20px;'>
+    <div class="mdl-cell mdl-cell--2-col product" id='Frituur_050'><div class='productName'>Frituur 0.50</div></div>
+    <div class="mdl-cell mdl-cell--2-col product" id='Frituur_150'><div class='productName'>Frituur 1.50</div></div>
+    <div class="mdl-cell mdl-cell--2-col product" id='Frituur_200'><div class='productName'>Frituur 2.00</div></div>
+    <div class="mdl-cell mdl-cell--2-col product" id='Chips'><div class='productName'>Chips</div></div>
+    <div class="mdl-cell mdl-cell--2-col product" id='Chocola'><div class='productName'>Chocola</div></div>
+    <hr style='width: 50%; margin-left:20px;'>
+    <div class="mdl-cell mdl-cell--2-col product" id=''><h1 style='text-align:center'>0.10</h1></div>
+    <div class="mdl-cell mdl-cell--2-col product" id=''><h1 style='text-align:center'>0.50</h1></div>
+    <div class="mdl-cell mdl-cell--2-col product" id=''><h1 style='text-align:center'>1.00</h1></div>
+    <div class="mdl-cell mdl-cell--2-col product" id=''><h1 style='text-align:center'>1.50</h1></div>
+    <div class="mdl-cell mdl-cell--2-col product" id=''><h1 style='text-align:center'>2.00</h1></div>
+    <div class="mdl-cell mdl-cell--2-col product" id=''><h1 style='text-align:center'>2.50</h1></div>
+
+<!-- </center> -->
+
+</div>
+
+  <div id='actions'>
+
+
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--accent" onclick='deleter()'>
+    <i class="material-icons">delete</i>
+  </button>
+  <!-- <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--accent">
+    <i class="material-icons">more_horiz</i>
+  </button> -->
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--accent multi" style="vertical-align: middle; padding:0;" id='x2' onclick='multiplier($(this))'>
+    <h5 style="vertical-align: middle; margin:0; text-align:center;padding: 0;">X2</h5>
+  </button>
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--accent multi" style="vertical-align: middle; padding:0;" id='x3' onclick='multiplier($(this))'>
+    <h5 style="vertical-align: middle; margin:0; text-align:center;padding: 0;">X3</h5>
+  </button>
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--accent multi" style="vertical-align: middle; padding:0;" id='x4' onclick='multiplier($(this))'>
+    <h5 style="vertical-align: middle; margin:0; text-align:center;padding: 0;">X4</h5>
+  </button>
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--accent multi" style="vertical-align: middle; padding:0;" id='x5' onclick='multiplier($(this))'>
+    <h5 style="vertical-align: middle; margin:0; text-align:center;padding: 0;">X5</h5>
+  </button>
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--accent multi" style="vertical-align: middle; padding:0;" id='x6' onclick='multiplier($(this))'>
+    <h5 style="vertical-align: middle; margin:0; text-align:center;padding: 0;">X6</h5>
+  </button>
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--accent multi" style="vertical-align: middle; padding:0;" id='x7' onclick='multiplier($(this))'>
+    <h5 style="vertical-align: middle; margin:0; text-align:center;padding: 0;">X7</h5>
+  </button>
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--accent multi" style="vertical-align: middle; padding:0;" id='x8' onclick='multiplier($(this))'>
+    <h5 style="vertical-align: middle; margin:0; text-align:center;padding: 0;">X8</h5>
+  </button>
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--accent multi" style="vertical-align: middle; padding:0;" id='x9' onclick='multiplier($(this))'>
+    <h5 style="vertical-align: middle; margin:0; text-align:center;padding: 0;">X9</h5>
+  </button>
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--accent multi" style="vertical-align: middle; padding:0;" id='x10' onclick='multiplier($(this))'>
+    <h5 style="vertical-align: middle; margin:0; text-align:center;padding: 0;">X10</h5>
+  </button>
+  <!-- <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" style='position:absolute; bottom: 20px; right: 20px;' >
+    <i class="material-icons">add</i>
+  </button> -->
+
+
+  </div>
+
+  <div id='bill'>
+    <span class="mdl-layout-title" style='text-align: center;'>Bon</span>
+    <hr>
+    <ul id='billList' class="demo-list-icon mdl-list">
+    </ul>
+
+    <div id='due'>
+    <hr style='width:100%;'> &euro; <span id='due-amount'></span> </div>
+    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" style='position:absolute; right: 5px; bottom: 10px; max-width:10px !important; min-width: 30px !important; height: 30px !important;' onclick='clearCart()'>
+      <i class="material-icons">clear</i>
+    </button>
+</div>
+
+  </div>
+
+
+
+
+  <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
+  </div>
+  </main>
+</div>
+
+
+
+<script src='script.js'></script>
+  </body>
+  </html>
