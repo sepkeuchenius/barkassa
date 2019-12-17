@@ -1,0 +1,35 @@
+header{
+  background: white;
+}
+.mdl-layout__header{
+  background: white;
+  color: #7e5b50;
+}
+.mdl-layout__drawer-button{
+  color: #7e5b50 !important;
+  vertical-align: middle !important;
+}
+body{
+  background: #ebebeb;
+}
+#login{
+
+  background: white;
+  padding: 20px 50px;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 100px;
+  padding-bottom: 70px;
+  border-radius: 10px;
+}
+.mdl-button--raised, .mdl-button--colored {
+    background:#7e5b50 !important;
+    color: white !important;
+}
+@media screen and (min-width: 1000px){
+main {
+    background: Url('assets/group.jpg') center / cover;
+    background: #ebebeb;
+}
+}
