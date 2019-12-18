@@ -3,13 +3,13 @@
   "name": "Barkassa",
   "icons": [
     {
-      "src": "/assets/download.svg",
-      "type": "image/svg",
+      "src": "/assets/logo-192.png",
+      "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/assets/download.svg",
-      "type": "image/svg",
+      "src": "/assets/icon-512.png",
+      "type": "image/png",
       "sizes": "512x512"
     }
   ],
