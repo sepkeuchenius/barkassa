@@ -1,0 +1,21 @@
+{
+  "short_name": "Barkassa",
+  "name": "Barkassa",
+  "icons": [
+    {
+      "src": "/assets/download.svg",
+      "type": "image/svg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/download.svg",
+      "type": "image/svg",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#008000",
+  "display": "fullscreen",
+  "scope": "",
+  "theme_color": "#008000"
+}
