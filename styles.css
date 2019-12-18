@@ -3,7 +3,7 @@ header{
 }
 .mdl-layout__header{
   background: white;
-  color: #7e5b50;
+  color: black;
 }
 .mdl-layout__drawer-button{
   color: #7e5b50 !important;
@@ -32,4 +32,17 @@ main {
     background: Url('assets/group.jpg') center / cover;
     background: #ebebeb;
 }
+}
+.mdl-layout__tab-bar-container, .mdl-layout__tab-bar,  .mdl-layout__tab-bar-button,  .mdl-layout__tab{
+  background: #7e5b50 !important;
+  color: white !important;
+}
+#content{
+  display: none;
+}
+#placeholder{
+  margin-top: calc(50vh - 150px);
+}
+.mdl-layout__drawer-button .material-icons{
+  margin-top: 10px;
 }
