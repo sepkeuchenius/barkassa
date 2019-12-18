@@ -33,6 +33,12 @@ main {
     background: #ebebeb;
 }
 }
+@media screen and (max-width: 1000px){
+  .product{
+    width: 150px !important;
+    height: 150px !important;
+  }
+}
 .mdl-layout__tab-bar-container, .mdl-layout__tab-bar,  .mdl-layout__tab-bar-button,  .mdl-layout__tab{
   background: #7e5b50 !important;
   color: white !important;
