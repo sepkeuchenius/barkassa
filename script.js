@@ -1,7 +1,8 @@
 var database = firebase.database();
 
 window.onload = function(){
-  $('#placeholder').effect('drop')
+  $('#logo_img').hide()
+  // $('#placeholder').effect('drop')
   window.setTimeout(function(){
     $('#placeholder').hide()
     $('#content').fadeIn()
@@ -53,7 +54,7 @@ function user_login(){
 function loadUser(user){
   $('#login_page').hide()
   $('#user_home').fadeIn()
-  $('#logo').fadeIn()
+  $('#logo_img').fadeIn()
   $('.mdl-layout__tab-bar-container').fadeIn()
    database.ref('users').child(user).once('value').then(function(snapshot){
      var data = snapshot.val()
