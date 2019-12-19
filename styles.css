@@ -28,7 +28,11 @@ body{
     color: white !important;
 }
 
-
+#actions{
+  /* margin:0 auto; */
+  width: auto;
+  /* display: table; */
+}
 .mdl-layout__tab-bar-container, .mdl-layout__tab-bar,  .mdl-layout__tab-bar-button,  .mdl-layout__tab{
   background: #7e5b50 !important;
   color: white !important;
@@ -75,6 +79,20 @@ body{
   border-radius: 0px 0 2  px 2px;
   padding-top: 5px;
   user-select: none;
+}
+.button_cont{
+  /* background: #008000; */
+  display: inline-block;;
+  border-radius: 50%;
+  height:30px;
+  width:30px;
+  margin-right:10px;
+}
+.green{
+  background: #008000;
+}
+.red{
+  background: red;
 }
 #bestelling{
   padding: 20px;
