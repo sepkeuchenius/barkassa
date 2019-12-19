@@ -19,6 +19,7 @@ window.onload = function(){
   }, 500)
 
 }
+pageLoad('bestelling', 'tab1')
 $('#abestelling, #tab1').on('click', function(){pageLoad('bestelling', 'tab1')});
 $('#arekening, #tab2').on('click', function(){pageLoad('rekening', 'tab2')});
 $('#ageschiedenis, #tab3').on('click', function(){pageLoad('geschiedenis', 'tab3')});
