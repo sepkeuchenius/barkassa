@@ -1,5 +1,14 @@
 var database = firebase.database();
-
+var products;
+var prices;
+database.ref('Products').once('value').then(function(snapshot){
+  var data = snapshot.val()
+  products = data;
+})
+database.ref('Product_prices').once('value').then(function(snapshot){
+  var data = snapshot.val()
+  prices = data;
+})
 window.onload = function(){
   $('#logo_img').hide()
   // $('#placeholder').effect('drop')
@@ -9,6 +18,23 @@ window.onload = function(){
 
   }, 500)
 
+}
+$('#abestelling, #tab1').on('click', function(){pageLoad('bestelling', 'tab1')});
+$('#arekening, #tab2').on('click', function(){pageLoad('rekening', 'tab2')});
+$('#ageschiedenis, #tab3').on('click', function(){pageLoad('geschiedenis', 'tab3')});
+// $('#arec , #tab4').on('click', function(){pageLoad('recordsCard', 'tab4')});
+function pageLoad(page, tab){
+  var pages = ['bestelling', 'rekening', 'geschiedenis']
+  var tabs = ['tab1', 'tab2', 'tab3', 'tab4']
+  for(var i in pages){
+    $('#' + pages[i]).hide();
+  }
+  for(var i in tabs){
+    $('#' + tabs[i]).attr('class', 'mdl-layout__tab')
+  }
+  $('#' + page).fadeIn(1000)
+  $('#' + tab).attr('class', 'mdl-layout__tab is-active');
+  // $('.mdl-layout__drawer').toggleClass('is-visible');
 }
 
 $('#login_button').on('click', function(){user_login()})
@@ -58,8 +84,14 @@ function loadUser(user){
   $('.mdl-layout__tab-bar-container').fadeIn()
    database.ref('users').child(user).once('value').then(function(snapshot){
      var data = snapshot.val()
-
-
+     var total = 0
+     for(var d in data){
+       var q = data[d]
+       var p = q * prices[d]
+       total += p;
+     }
+     $('#userTotal').text('\u20AC' + total.toFixed(2))
   })
+
 
 }

@@ -27,21 +27,15 @@ body{
     background:#7e5b50 !important;
     color: white !important;
 }
-@media screen and (min-width: 1000px){
-main {
-    background: Url('assets/group.jpg') center / cover;
-    background: #ebebeb;
-}
-}
-@media screen and (max-width: 1000px){
-  .product{
-    width: 150px !important;
-    height: 150px !important;
-  }
-}
+
+
 .mdl-layout__tab-bar-container, .mdl-layout__tab-bar,  .mdl-layout__tab-bar-button,  .mdl-layout__tab{
   background: #7e5b50 !important;
   color: white !important;
+}
+.right{
+  float: right;
+  color: #008000;
 }
 #content{
   display: none;
@@ -58,7 +52,7 @@ main {
 .product{
   background-color: white !important;
   cursor: pointer;
-  height: 120px;
+  height: 200px;
   border-radius: 2px;
   display: flex;
   position: relative;
@@ -66,7 +60,7 @@ main {
   display: inline-grid;
    /* box-shadow: 0px 3px 15px rgba(0,0,0,0.2); */
   /* box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12); */
-  width: 120px;
+  width: 200px;
   /* padding: 10px; */
 }
 .productName{
@@ -86,8 +80,42 @@ main {
   padding: 20px;
 
 }
+.is-active{
+  /* border-bottom: 1px solid white !important; */
+}
+/* PHONE USERS */
+@media screen and (min-width: 1000px){
+main {
+    background: Url('assets/group.jpg') center / cover;
+    background: #ebebeb;
+}
 
 
+}
+@media screen and (max-width: 1000px){
+#bestelling{
+    width: 100%;
+    padding: 3.5vw;
+    /* margin: 0 auto; */
+}
+
+.product{
+  width:45vw;
+  height: 45vw;
+  margin:0 !important;
+  margin: 0.5vw !important;
+
+}
+h5{
+  margin:5px;
+}
+.mdl-layout__tab-bar{
+  padding:0;
+  margin: 0 auto;
+}
+}
+
+/* PICS */
 #Fris{background: url('https://images-na.ssl-images-amazon.com/images/I/511rL-aYd9L._SX385_.jpg') no-repeat center / 80%;}
 #icetea{background: url('https://www.horescasmulders.nl/img/products/large/7210051_02.jpg') center / cover; }
 #Bier{background: url('http://www.weekvanhetnederlandsebier.nl/e2/wnb/app/custom/upload/bieren/hertog_jan/2016/.cache/hertog_jan_karakter-80-150_150_2.png')  no-repeat center / 80%; }
@@ -96,10 +124,10 @@ main {
 #appelsap{background: url('https://s3-eu-west-1.amazonaws.com/questionmark-productinfo/images/medium/f4abb74b55c08dd3a21094bcc1b369ff.jpg') center / cover; }
 #sinas{background: url('https://s3-eu-west-1.amazonaws.com/questionmark-productinfo/images/medium/3b67488b88e9a47c5deb867a21603193.jpg') center / cover; }
 #Wijn{background: url('https://rozemaverhuur.nl/wp-content/uploads/Doos-6st.-rode-wijn-075-ltr-_-Angelo-Nero-d-Avola.jpg') no-repeat center / 80%; }
-#Frituur_050{background: url('http://bakeandbite.co.nz/wp-content/uploads/2016/11/Bitterballen-1080x1080.jpg') center / cover; }
-#Frituur_150{background: url('https://www.hollandsnackexpress.com/image/cache/catalog/snacks/kroket-200x200.png') center / cover; }
-#Frituur_200{background: url('https://ntf.blob.core.windows.net/pictures/2-635949347615548202.jpg') center / cover; }
-#Chips{background: url('http://www.pngpix.com/wp-content/uploads/2016/07/PNGPIX-COM-Lays-Potato-Chips-PNG-Transparent-Image-500x676.png') center / cover; }
+#Frituur_050{background: url('https://www.hollandsnackexpress.com/image/cache/catalog/snacks/kroket-200x200.png') no-repeat center / 80%; }
+#Frituur_150{background: url('https://dq5r178u4t83b.cloudfront.net/wp-content/uploads/sites/48/2018/02/01143056/Bitterbal.jpg') no-repeat center / 80%;}
+#Frituur_200{background: url('https://ntf.blob.core.windows.net/pictures/2-635949347615548202.jpg') no-repeat center / 80%; }
+#Chips{background: url('http://www.pngpix.com/wp-content/uploads/2016/07/PNGPIX-COM-Lays-Potato-Chips-PNG-Transparent-Image-500x676.png') no-repeat center / 60%; }
 #bifi{background: url('https://www.kantinewinkel.nl/images/P/bifi%20xxl.jpg') center / cover; }
 #Chocola{background: url('https://jlbrooks.co.uk/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/m/i/mix_chocolate.jpg') center / cover; }
 #open{background: url('https://maxcdn.icons8.com/Share/icon/Alphabet//question_mark1600.png') center / cover; }
