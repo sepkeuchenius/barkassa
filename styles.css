@@ -175,9 +175,14 @@ h5{
 
 }
 
-.demo-card-square.mdl-card {
-  /* width: 320px;
-  height: 320px; */
+.aantal{
+  width: 50px;
+  padding-top: 0;
+
+}
+#aantal{
+  font-size: 20px;
+  text-align: center;
 }
 #back{
   display: none;
@@ -192,6 +197,7 @@ h5{
 }
 .mdl-card__actions{
   height: 80px;
+  padding-top: 15px;
 }
 .buttons{
   margin-top: 7px;
@@ -199,6 +205,13 @@ h5{
 .mdl-button--mini-fab{
   margin: 2px;
   font-size: 15px;
+  background: white;
+}
+.actions_left{
+  float: left;
+  margin-top: 5px;
+  /* margin-bottom: 10px; */
+  margin-left: 20px;
 }
 #Fris, #FrisP{background: url('https://images-na.ssl-images-amazon.com/images/I/511rL-aYd9L._SX385_.jpg') no-repeat center / 80%;}
 #icetea{background: url('https://www.horescasmulders.nl/img/products/large/7210051_02.jpg') center / cover; }

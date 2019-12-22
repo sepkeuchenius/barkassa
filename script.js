@@ -10,6 +10,14 @@ database.ref('Product_prices').once('value').then(function(snapshot){
   prices = data;
 })
 window.onload = function(){
+  $(".down").on('click', function(){
+    var next = $(this).next().children().first()
+    next.val(Number(Number(next.val()) - 1))
+  })
+  $(".up").on('click', function(){
+    var next = $(this).prev().children().first()
+    next.val(Number(Number(next.val()) + 1))
+  })
   $('#back').on('click', function(){
     $('.popup').each(function(){
       if($(this).is(':visible')){
