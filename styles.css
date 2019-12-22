@@ -125,8 +125,10 @@ body{
   display: none;
   z-index: 1;
   top: calc(50vh - 150px);
-  left: 10vw;
-  height: 300px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  top:0;
 
 }
 /* PHONE USERS */
@@ -135,7 +137,12 @@ main {
     background: Url('assets/group.jpg') center / cover;
     background: #ebebeb;
 }
-
+.popup{
+  left: 10vw;
+  width: 500px;
+  height: 500px;
+  top: 10vw;
+}
 
 }
 @media screen and (max-width: 1000px){
@@ -172,8 +179,19 @@ h5{
   /* width: 320px;
   height: 320px; */
 }
+#back{
+  display: none;
+  position: fixed;
+  left: 15px;
+  top: 120px;
+  z-index: 6;
+  background: white;
+}
 .mdl-card__title{
-  height: 75%;
+  height: calc(100% - 80px);
+}
+.mdl-card__actions{
+  height: 80px;
 }
 .buttons{
   margin-top: 7px;

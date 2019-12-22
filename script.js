@@ -10,6 +10,16 @@ database.ref('Product_prices').once('value').then(function(snapshot){
   prices = data;
 })
 window.onload = function(){
+  $('#back').on('click', function(){
+    $('.popup').each(function(){
+      if($(this).is(':visible')){
+        $(this).hide('slide', 100)
+      }
+    })
+    // $('.popup').hide('slide', 200)
+    // $('.popup').hide()
+    $('#back').hide();
+  })
   $('#popup').hide();
   // $('#logo_img').hide()
   // $('#placeholder').effect('drop')
@@ -33,8 +43,9 @@ window.onload = function(){
     })
     if(hide){return;}
     $('#popup' + id).effect('slide', 200);
+    $('#back').show()
   })
-  
+}
 pageLoad('bestelling', 'tab1')
 $('#abestelling, #tab1').on('click', function(){pageLoad('bestelling', 'tab1')});
 $('#arekening, #tab2').on('click', function(){pageLoad('rekening', 'tab2')});
