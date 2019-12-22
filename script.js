@@ -10,19 +10,24 @@ database.ref('Product_prices').once('value').then(function(snapshot){
   prices = data;
 })
 window.onload = function(){
-  $('#logo_img').hide()
+  $('#popup').hide();
+  // $('#logo_img').hide()
   // $('#placeholder').effect('drop')
   window.setTimeout(function(){
     $('#placeholder').hide()
     $('#content').fadeIn()
 
   }, 500)
-
+  $('.product').on('click', function(){
+    // alert('test')
+    $('#popupBier').effect('slide', 200);
+  })
 }
 pageLoad('bestelling', 'tab1')
 $('#abestelling, #tab1').on('click', function(){pageLoad('bestelling', 'tab1')});
 $('#arekening, #tab2').on('click', function(){pageLoad('rekening', 'tab2')});
 $('#ageschiedenis, #tab3').on('click', function(){pageLoad('geschiedenis', 'tab3')});
+
 // $('#arec , #tab4').on('click', function(){pageLoad('recordsCard', 'tab4')});
 function pageLoad(page, tab){
   var pages = ['bestelling', 'rekening', 'geschiedenis']
