@@ -20,7 +20,9 @@ window.onload = function(){
   }, 500)
   $('.product').on('click', function(){
     // alert('test')
-    $('#popupBier').effect('slide', 200);
+    var id = this.id
+    $('.popup').hide()
+    $('#popup' + id).effect('slide', 200);
   })
 }
 pageLoad('bestelling', 'tab1')

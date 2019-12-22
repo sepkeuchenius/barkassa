@@ -164,9 +164,10 @@ h5{
 /* PICS */
 .demo-card-square > .mdl-card__title {
   color: #615555;
-  background:
-    url('http://www.weekvanhetnederlandsebier.nl/e2/wnb/app/custom/upload/bieren/hertog_jan/2016/.cache/hertog_jan_karakter-80-150_150_2.png') center 80% no-repeat white;
+  background-size: 50% !important;
+
 }
+
 .demo-card-square.mdl-card {
   /* width: 320px;
   height: 320px; */
@@ -181,20 +182,20 @@ h5{
   margin: 2px;
   font-size: 15px;
 }
-#Fris{background: url('https://images-na.ssl-images-amazon.com/images/I/511rL-aYd9L._SX385_.jpg') no-repeat center / 80%;}
+#Fris, #FrisP{background: url('https://images-na.ssl-images-amazon.com/images/I/511rL-aYd9L._SX385_.jpg') no-repeat center / 80%;}
 #icetea{background: url('https://www.horescasmulders.nl/img/products/large/7210051_02.jpg') center / cover; }
-#Bier{background: url('http://www.weekvanhetnederlandsebier.nl/e2/wnb/app/custom/upload/bieren/hertog_jan/2016/.cache/hertog_jan_karakter-80-150_150_2.png')  no-repeat center / 80%; }
+#Bier, #BierP{background: url('http://www.weekvanhetnederlandsebier.nl/e2/wnb/app/custom/upload/bieren/hertog_jan/2016/.cache/hertog_jan_karakter-80-150_150_2.png')  no-repeat center / 80%; }
 #fanta{background: url('http://www.destage.com/wp-content/uploads/2014/03/Fanta-Orange-24x20-cl.jpg') center / cover; }
 #cassis{background: url('https://www.opisopvoordeelshop.nl/media/catalog/product/cache/image/700x660/e9c3970ab036de70892d86c6d221abfe/2/9/29612_1_1.png') center / cover; }
 #appelsap{background: url('https://s3-eu-west-1.amazonaws.com/questionmark-productinfo/images/medium/f4abb74b55c08dd3a21094bcc1b369ff.jpg') center / cover; }
 #sinas{background: url('https://s3-eu-west-1.amazonaws.com/questionmark-productinfo/images/medium/3b67488b88e9a47c5deb867a21603193.jpg') center / cover; }
-#Wijn{background: url('https://rozemaverhuur.nl/wp-content/uploads/Doos-6st.-rode-wijn-075-ltr-_-Angelo-Nero-d-Avola.jpg') no-repeat center / 80%; }
-#Frituur_050{background: url('https://www.hollandsnackexpress.com/image/cache/catalog/snacks/kroket-200x200.png') no-repeat center / 80%; }
-#Frituur_150{background: url('https://dq5r178u4t83b.cloudfront.net/wp-content/uploads/sites/48/2018/02/01143056/Bitterbal.jpg') no-repeat center / 80%;}
-#Frituur_200{background: url('https://ntf.blob.core.windows.net/pictures/2-635949347615548202.jpg') no-repeat center / 80%; }
-#Chips{background: url('http://www.pngpix.com/wp-content/uploads/2016/07/PNGPIX-COM-Lays-Potato-Chips-PNG-Transparent-Image-500x676.png') no-repeat center / 60%; }
+#Wijn, #WijnP{background: url('https://rozemaverhuur.nl/wp-content/uploads/Doos-6st.-rode-wijn-075-ltr-_-Angelo-Nero-d-Avola.jpg') no-repeat center / 80%; }
+#Frituur_050, #Frituur_050P{background: url('https://www.hollandsnackexpress.com/image/cache/catalog/snacks/kroket-200x200.png') no-repeat center / 80%; }
+#Frituur_150, #Frituur_150P{background: url('https://dq5r178u4t83b.cloudfront.net/wp-content/uploads/sites/48/2018/02/01143056/Bitterbal.jpg') no-repeat center / 80%;}
+#Frituur_200, #Frituur_200P{background: url('https://ntf.blob.core.windows.net/pictures/2-635949347615548202.jpg') no-repeat center / 80%; }
+#Chips, #ChipsP{background: url('http://www.pngpix.com/wp-content/uploads/2016/07/PNGPIX-COM-Lays-Potato-Chips-PNG-Transparent-Image-500x676.png') no-repeat center / 60%; }
 #bifi{background: url('https://www.kantinewinkel.nl/images/P/bifi%20xxl.jpg') center / cover; }
 #Chocola{background: url('https://jlbrooks.co.uk/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/m/i/mix_chocolate.jpg') center / cover; }
 #open{background: url('https://maxcdn.icons8.com/Share/icon/Alphabet//question_mark1600.png') center / cover; }
-#Speciaal{background: url('https://www.frank.news/images/easyblog_articles/2295/b2ap3_large_Heineken_Brands-cut-1024x545.png') no-repeat center / 80%;}
+#Speciaal, #SpeciaalP{background: url('https://www.frank.news/images/easyblog_articles/2295/b2ap3_large_Heineken_Brands-cut-1024x545.png') no-repeat center / 80%;}
 #Shots{background: url('https://res-2.cloudinary.com/boozeboodcdn/image/upload/e_trim:10/c_pad,g_south,h_455,w_300/c_limit,h_455,w_300/f_auto,q_auto:best/v1/HD/26306.jpg') center / cover;}
