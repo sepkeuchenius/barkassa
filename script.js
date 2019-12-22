@@ -21,10 +21,20 @@ window.onload = function(){
   $('.product').on('click', function(){
     // alert('test')
     var id = this.id
-    $('.popup').hide()
+    var popups = $('.popup')
+    var hide = false;
+    popups.each(function(){
+      var el = $( this )
+      if(el.css('display') != 'none'){
+        el.hide()
+        hide = true;
+        return;
+      }
+    })
+    if(hide){return;}
     $('#popup' + id).effect('slide', 200);
   })
-}
+  
 pageLoad('bestelling', 'tab1')
 $('#abestelling, #tab1').on('click', function(){pageLoad('bestelling', 'tab1')});
 $('#arekening, #tab2').on('click', function(){pageLoad('rekening', 'tab2')});
