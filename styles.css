@@ -171,7 +171,7 @@ h5{
 /* PICS */
 .demo-card-square > .mdl-card__title {
   color: #615555;
-  background-size: 50% !important;
+  background-size: 60% !important;
 
 }
 
@@ -179,6 +179,10 @@ h5{
   width: 50px;
   padding-top: 0;
 
+}
+.up, .down{
+  cursor: pointer;
+  vertical-align: middle;
 }
 #aantal{
   font-size: 20px;
@@ -213,9 +217,12 @@ h5{
   /* margin-bottom: 10px; */
   margin-left: 20px;
 }
+#bierP{
+  background-size: 40% !important;
+}
 #Fris, #FrisP{background: url('https://images-na.ssl-images-amazon.com/images/I/511rL-aYd9L._SX385_.jpg') no-repeat center / 80%;}
 #icetea{background: url('https://www.horescasmulders.nl/img/products/large/7210051_02.jpg') center / cover; }
-#Bier, #BierP{background: url('http://www.weekvanhetnederlandsebier.nl/e2/wnb/app/custom/upload/bieren/hertog_jan/2016/.cache/hertog_jan_karakter-80-150_150_2.png')  no-repeat center / 80%; }
+#Bier, #BierP{background: url('https://www.horecasupport.nl/admin_assets/beers/beers_visuals/5-beer.jpg?181231153248')  no-repeat center / 40%; }
 #fanta{background: url('http://www.destage.com/wp-content/uploads/2014/03/Fanta-Orange-24x20-cl.jpg') center / cover; }
 #cassis{background: url('https://www.opisopvoordeelshop.nl/media/catalog/product/cache/image/700x660/e9c3970ab036de70892d86c6d221abfe/2/9/29612_1_1.png') center / cover; }
 #appelsap{background: url('https://s3-eu-west-1.amazonaws.com/questionmark-productinfo/images/medium/f4abb74b55c08dd3a21094bcc1b369ff.jpg') center / cover; }
