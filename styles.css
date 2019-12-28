@@ -167,14 +167,27 @@ h5{
   margin: 0 auto;
 }
 }
-
+#billList{
+  margin:0;
+}
 /* PICS */
 .demo-card-square > .mdl-card__title {
   color: #615555;
   background-size: 60% !important;
 
 }
-
+.mdl-list__item{
+  background: white;
+  /* margin-top: 2px; */
+  border-bottom: 1px solid rgba(0,0,0,.12);
+}
+.right_item{
+  /* float: right; */
+  position: absolute;
+  right: 10px;
+  margin-right: 30px;
+  color: #008800;
+}
 .aantal{
   width: 50px;
   padding-top: 0;

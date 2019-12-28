@@ -1,22 +1,83 @@
 var database = firebase.database();
 var products;
+var productNames;
 var prices;
+var currentUser;
+var snackbarContainer = document.querySelector('#demo-snackbar-example');
+
 database.ref('Products').once('value').then(function(snapshot){
   var data = snapshot.val()
   products = data;
 })
+
 database.ref('Product_prices').once('value').then(function(snapshot){
   var data = snapshot.val()
   prices = data;
 })
+database.ref('Product_names').once('value').then(function(snapshot){
+  var data = snapshot.val()
+  productNames = data;
+})
 window.onload = function(){
+ $('.popup').find('button').on('click', function(){
+   var parent_card = $(this).parent().parent();
+   var parent_id = parent_card.attr('id')
+   var n = parent_card.find('.aantal').children().first().val()
+   n = Number(n)
+   var product = parent_id.replace('popup', '')
+
+   for(var i in products){ if(product == products[i]){break}}
+   console.log(i)
+   database.ref('users/' + currentUser).once('value').then(function(snapshot){
+     var userdata = snapshot.val()
+     // var userdata = data.currentUser
+     var msg = n +' '+ products[i] + ' toegevoegd'
+     userdata[i] = userdata[i] + n;
+     if(n < 0 ){
+         msg = -1*n +' '+ products[i] + ' verwijderd'
+   }
+
+   var data = {
+      message: msg,
+      timeout: 3000,
+      actionText: 'Undo'
+    };
+    snackbarContainer.MaterialSnackbar.showSnackbar(data);
+     database.ref('users/' + currentUser).set(userdata,
+        function(error){
+         if(error){
+           alert('wow, niet gelukt!')
+         }
+         else{
+           loadBill()
+         // productSucces()
+         }
+       }
+
+     );
+   })
+
+
+ })
   $(".down").on('click', function(){
     var next = $(this).next().children().first()
     next.val(Number(Number(next.val()) - 1))
+    if(next.val() < 0){
+      $(this).parent().parent().find('button').css('background', '#ff6e6e')
+    }
+    else{
+      $(this).parent().parent().find('button').css('background', '#6ece6e')
+    }
   })
   $(".up").on('click', function(){
     var next = $(this).prev().children().first()
     next.val(Number(Number(next.val()) + 1))
+    if(next.val() < 0){
+      $(this).parent().parent().find('button').css('background', '#ff6e6e')
+    }
+    else{
+      $(this).parent().parent().find('button').css('background', '#6ece6e')
+    }
   })
   $('#back').on('click', function(){
     $('.popup').each(function(){
@@ -115,20 +176,41 @@ function user_login(){
 
 }
 function loadUser(user){
+  currentUser = user;
   $('#login_page').hide()
   $('#user_home').fadeIn()
   $('#logo_img').fadeIn()
   $('.mdl-layout__tab-bar-container').fadeIn()
-   database.ref('users').child(user).once('value').then(function(snapshot){
-     var data = snapshot.val()
-     var total = 0
-     for(var d in data){
-       var q = data[d]
-       var p = q * prices[d]
-       total += p;
+  loadBill()
+
+
+}
+function loadBill(){
+  var user = currentUser
+  var t;
+  database.ref('users').child(user).once('value').then(function(snapshot){
+    var data = snapshot.val()
+    var total = 0
+    for(var d in data){
+      var q = data[d]
+      var p = q * prices[d]
+      total += p;
+    }
+    $('#userTotal').text('\u20AC' + total.toFixed(2))
+    $('#userTotal').effect('highlight')
+    t = total
+ })
+ database.ref('users/' + currentUser).once('value').then(function(snapshot){
+   var data =  snapshot.val();
+   $('#billList').empty()
+   var due = 0;
+   for(var i in data){
+     if(data[i] > 0){
+       $('#billList').append('<li class="mdl-list__item"> ' + productNames[i] + '<span class="right_item">' + data[i] + '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   \u20AC' + prices[i].toFixed(2)  + '</span>')
+       due += prices[i] * data[i]
      }
-     $('#userTotal').text('\u20AC' + total.toFixed(2))
-  })
+   }
+   $('#billList').append('<li class="mdl-list__item" style= "font-weight:bold;">  Total  <span class="right_item"> ' + '\u20AC' + due.toFixed(2)  + '</span>')
 
-
+ })
 }
