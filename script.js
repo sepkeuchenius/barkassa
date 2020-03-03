@@ -57,7 +57,7 @@ window.onload = function(){
      );
    })
 
-
+  database.ref('Log').push({"date": moment().format('DD-MM-YYYY, HH:mm:ss'), "amount": n, "product": products[i], "user":currentUser})
  })
   $(".down").on('click', function(){
     var next = $(this).next().children().first()
@@ -197,7 +197,7 @@ function loadBill(){
       total += p;
     }
     $('#userTotal').text('\u20AC' + total.toFixed(2))
-    $('#userTotal').effect('highlight')
+    $('#userTotal').effect('highlight', 1000)
     t = total
  })
  database.ref('users/' + currentUser).once('value').then(function(snapshot){
