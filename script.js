@@ -57,7 +57,7 @@ window.onload = function(){
      );
    })
 
-  database.ref('Log').push({"date": moment().format('DD-MM-YYYY, HH:mm:ss'), "amount": n, "product": products[i], "user":currentUser})
+  database.ref('Log').push({"date": moment().format('DD-MM-YYYY, HH:mm:ss'), "amount": n, "product": products[i], "user":currentUser, "deviceInfo": window.navigator.userAgent})
  })
   $(".down").on('click', function(){
     var next = $(this).next().children().first()
